@@ -36,10 +36,14 @@ public class Main {
         double length1 = calculateLineLength(x1, y1, x2, y2);
         double length2 = calculateLineLength(x3, y3, x4, y4);
 
-        if (Double.valueOf(length1).equals(length2)) {
+        int comparisonResult = Double.compare(length1, length2);
+
+        if (comparisonResult == 0) {
             System.out.println("The two lines are equal in length.");
+        } else if (comparisonResult > 0) {
+            System.out.println("Line 1 is greater than Line 2.");
         } else {
-            System.out.println("The two lines are not equal in length.");
+            System.out.println("Line 1 is less than Line 2.");
         }
     }
     public static double calculateLineLength(double x1, double y1, double x2, double y2) {
